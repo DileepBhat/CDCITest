@@ -1,10 +1,8 @@
 language: csharp
-solution: ArithematicChecks.sln
 mono: none
 dotnet: 3.1
 install:
- - nuget restore ArithematicChecks.sln
- - nuget install NUnit.Console -Version 3.9.0 -OutputDirectory testrunner
+ - dotnet restore
 script:
- - msbuild /p:Configuration=Release ArithematicChecks.sln
- - dotnet /testrunner/NUnit.ConsoleRunner.3.9.0/tools/nunit3-console.exe ./ArithematicChecks/ArithematicLibraryTests/bin/Release/netcoreapp3.1/ArithematicLibraryTests.dll
+ - dotnet build
+ - dotnet test
