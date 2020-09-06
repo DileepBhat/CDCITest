@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArithematicLibrary", "ArithematicLibrary\ArithematicLibrary.csproj", "{B7A9997A-4637-4590-9484-5AD3ECD89D02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArithematicLibrary", "ArithematicLibrary\ArithematicLibrary.csproj", "{B7A9997A-4637-4590-9484-5AD3ECD89D02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArithematicLibraryTests", "ArithematicLibraryTests\ArithematicLibraryTests.csproj", "{67498DC0-DB65-4910-82AB-09FCDB446342}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArithematicLibraryTests", "ArithematicLibraryTests\ArithematicLibraryTests.csproj", "{67498DC0-DB65-4910-82AB-09FCDB446342}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArithematicAPIService.v1", "ArithematicAPIService.v1\ArithematicAPIService.v1.csproj", "{8B0320D7-2F3E-4720-8138-DC45B1BBA69E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arithematic.Service.v1.Tests", "Arithematic.Service.v1.Tests\Arithematic.Service.v1.Tests.csproj", "{508E662A-B57D-4BAC-ABBB-4C526DCE42B3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{67498DC0-DB65-4910-82AB-09FCDB446342}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67498DC0-DB65-4910-82AB-09FCDB446342}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67498DC0-DB65-4910-82AB-09FCDB446342}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B0320D7-2F3E-4720-8138-DC45B1BBA69E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B0320D7-2F3E-4720-8138-DC45B1BBA69E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B0320D7-2F3E-4720-8138-DC45B1BBA69E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B0320D7-2F3E-4720-8138-DC45B1BBA69E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{508E662A-B57D-4BAC-ABBB-4C526DCE42B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{508E662A-B57D-4BAC-ABBB-4C526DCE42B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{508E662A-B57D-4BAC-ABBB-4C526DCE42B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{508E662A-B57D-4BAC-ABBB-4C526DCE42B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
