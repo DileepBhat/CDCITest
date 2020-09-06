@@ -6,3 +6,5 @@ install:
 script:
  - dotnet build ./ArithematicChecks/ArithematicChecks.sln
  - dotnet test ./ArithematicChecks/ArithematicLibraryTests/ArithematicLibraryTests.csproj
+ - dotnet coverage ./ArithematicChecks/ArithematicChecks.sln
+ - bash <(curl -s https://codecov.io/bash)
