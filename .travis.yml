@@ -5,6 +5,6 @@ install:
  - dotnet restore ./ArithematicChecks/ArithematicChecks.sln
 script:
  - dotnet build ./ArithematicChecks/ArithematicChecks.sln
- - dotnet test ./ArithematicChecks/ArithematicLibraryTests/ArithematicLibraryTests.csproj
- - dotnet coverage ./ArithematicChecks/ArithematicChecks.sln
+ - dotnet test -c Release --no-build ./ArithematicChecks/ArithematicLibraryTests/ArithematicLibraryTests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
+after_script:
  - bash <(curl -s https://codecov.io/bash)
