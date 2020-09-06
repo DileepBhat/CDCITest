@@ -6,7 +6,8 @@ namespace ArithematicLibrary
     {
         public static int Add(int a, int b)
         {
-            return (a + b);
+            var result = a + b;
+            return result;
         }
     }
 }
