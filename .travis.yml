@@ -6,6 +6,7 @@ services:
 before_script:
  - psql -c "CREATE USER test_account WITH PASSWORD 'test';" -U postgres
  - psql -c "CREATE DATABASE EmployeeTestDB;" -U postgres
+ - dotnet tool install --global dotnet-ef
 script:
  - dotnet build -c Release ./ArithematicChecks/ArithematicChecks.sln
  - dotnet ef database update ./ArithematicChecks/ArithematicChecks.sln
