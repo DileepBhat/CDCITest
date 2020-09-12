@@ -5,7 +5,7 @@ services:
  - postgresql
 before_script:
  - psql -c "CREATE USER test_account WITH PASSWORD 'test';" -U postgres
- - psql -c "CREATE DATABASE EmployeeTestDB;" -U test_account
+ - psql -c "CREATE DATABASE EmployeeTestDB;" -U postgres
 script:
  - dotnet build -c Release ./ArithematicChecks/ArithematicChecks.sln
  - dotnet ef database update ./ArithematicChecks/ArithematicChecks.sln
