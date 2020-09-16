@@ -17,9 +17,9 @@ namespace ArithematicAPIService.v1.Controllers
         private const string ControllerPath = @"/api/v1/employees";
 
         private EmployeeDataContext _employeeDataContext;
-        public EmployeeController(EmployeeDataContext employeeDataContext)
+        public EmployeeController()
         {
-            _employeeDataContext = employeeDataContext;
+            _employeeDataContext = new EmployeeDataContext(new DbContextOptions<EmployeeDataContext>());
         }
 
         [HttpPost]

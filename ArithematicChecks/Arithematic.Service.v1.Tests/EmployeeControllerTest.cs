@@ -9,27 +9,10 @@ namespace Arithematic.Service.v1.Tests
 {
     public class EmployeeControllerTest
     {
-        private EmployeeDataContext _employeeDataContext;
-
-        [OneTimeSetUp]
-        public void SetUp()
-        {
-            var optionsBuilder = new DbContextOptionsBuilder<EmployeeDataContext>();
-            optionsBuilder.UseNpgsql("Server=127.0.0.1;port=5432;user id=test_account;password=test;database=employee_test_db;pooling=true");
-
-            _employeeDataContext = new EmployeeDataContext(optionsBuilder.Options);
-        }
-
-        [OneTimeTearDown]
-        public void TearDown()
-        {
-            _employeeDataContext.Dispose();
-        }
-
         [Test]
         public void GivenAEmployeeController_PerformCurdOperations_AllOperationsShouldBeSuccessful()
         {
-            var controller = new EmployeeController(_employeeDataContext);
+            var controller = new EmployeeController();
 
             var employee = new Employee
             {

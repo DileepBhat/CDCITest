@@ -14,9 +14,9 @@ namespace ArithematicAPIService.v1.Data
 
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        protected internal new void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            base.OnConfiguring(optionsBuilder);
+            optionsBuilder.UseNpgsql("Server=127.0.0.1;port=5432;user id=service_account;password=service;database=employee_db;pooling=true");
         }
 
         public DbSet<Employee> Employees { get; set; }

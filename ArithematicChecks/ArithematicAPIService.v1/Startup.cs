@@ -31,9 +31,7 @@ namespace ArithematicAPIService.v1
             services.AddControllers();
 
             services.AddSwaggerGen(
-                c => c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "ArithematicAPI", Version = "v1" }));
-
-            services.AddDbContext<EmployeeDataContext>(c => c.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
+                c => c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "ArithematicAPI", Version = "v1" }));            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -9,7 +9,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ArithematicAPIService.v1.Migrations
 {
     [DbContext(typeof(EmployeeDataContext))]
-    [Migration("20200911160028_InitialCreate")]
+    [Migration("20200916153341_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
