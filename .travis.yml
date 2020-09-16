@@ -1,14 +1,19 @@
 language: csharp
 sudo: required
+dist:trusty
 mono: none
 dotnet: 3.1
 services:
  - postgresql
 before_script:
+ - export PATH=$PATH:/home/travis/.dotnet/tools
+ - sudo apt-get update
+ - sudo apt-get -y dotnet tools install --global dotnet-ef --version 3.1.8  
  - psql -c "CREATE DATABASE EmployeeTestDB" -U postgres
  - psql -c "CREATE USER test_account WITH PASSWORD 'test'" -U postgres
 script:
  - dotnet build -c Release ./ArithematicChecks/ArithematicChecks.sln
+ - dotnet-ef update database --project ./ArithematicChecks/ArithematicAPIService.v1/ArithematicAPIService.v1.csproj  
  - dotnet test -c Release --no-build ./ArithematicChecks/ArithematicChecks.sln /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
 after_script:
  - bash <(curl -s https://codecov.io/bash)
