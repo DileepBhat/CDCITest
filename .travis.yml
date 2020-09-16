@@ -7,9 +7,9 @@ services:
 before_script:
  - export PATH=$PATH:/home/travis/.dotnet/tools
  - dotnet tool install --global dotnet-ef
- - psql -c "CREATE DATABASE EmployeeDB" -U postgres
+ - psql -c "CREATE DATABASE employee_db" -U postgres
  - psql -c "CREATE USER service_account WITH PASSWORD 'service'" -U postgres
- - psql -c "CREATE DATABASE EmployeeTestDB" -U postgres
+ - psql -c "CREATE DATABASE employee_test_db" -U postgres
  - psql -c "CREATE USER test_account WITH PASSWORD 'test'" -U postgres
 script:
  - dotnet build -c Release ./ArithematicChecks/ArithematicChecks.sln

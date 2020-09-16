@@ -15,7 +15,7 @@ namespace Arithematic.Service.v1.Tests
         public void SetUp()
         {
             var optionsBuilder = new DbContextOptionsBuilder<EmployeeDataContext>();
-            optionsBuilder.UseNpgsql("Server=127.0.0.1;port=5432;user id=test_account;password=test;database=EmployeeTestDB;pooling=true");
+            optionsBuilder.UseNpgsql("Server=127.0.0.1;port=5432;user id=test_account;password=test;database=employee_test_db;pooling=true");
 
             _employeeDataContext = new EmployeeDataContext(optionsBuilder.Options);
         }
