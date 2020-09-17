@@ -30,6 +30,8 @@ namespace ArithematicAPIService.v1
         {
             services.AddControllers();
 
+            services.AddDbContext<EmployeeDataContext>(optionsBuilder => optionsBuilder.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddSwaggerGen(
                 c => c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "ArithematicAPI", Version = "v1" }));            
         }

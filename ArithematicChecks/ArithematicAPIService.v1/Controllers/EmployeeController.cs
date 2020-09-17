@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using ArithematicAPIService.v1.Data;
 using ArithematicAPIService.v1.Models;
-using ArithematicLibrary;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 
 namespace ArithematicAPIService.v1.Controllers
 {
@@ -17,9 +11,9 @@ namespace ArithematicAPIService.v1.Controllers
         private const string ControllerPath = @"/api/v1/employees";
 
         private EmployeeDataContext _employeeDataContext;
-        public EmployeeController()
+        public EmployeeController(EmployeeDataContext employeeDataContext)
         {
-            _employeeDataContext = new EmployeeDataContext(new DbContextOptions<EmployeeDataContext>());
+            _employeeDataContext = employeeDataContext;
         }
 
         [HttpPost]
