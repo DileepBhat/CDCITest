@@ -2,8 +2,6 @@ language: csharp
 sudo: required
 mono: none
 dotnet: 3.1
-services:
- - postgresql
 addons:
  postgres: "12"
  apt:
