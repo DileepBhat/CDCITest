@@ -4,6 +4,22 @@ mono: none
 dotnet: 3.1
 services:
 - postgresql
+addons:
+  postgresql: '12'
+  apt:
+    packages:
+      - postgresql-12
+      - postgresql-client-12
+
+before_install:
+  - sudo pg_dropcluster --stop 12 main
+  - sudo pg_upgradecluster 9.6 main
+  - sudo pg_ctlcluster 12 main restart
+  - sudo pg_dropcluster 9.6 main
+
+env:
+  global:
+    - PGPORT=5432
 before_script:
  - export PATH=$PATH:/home/travis/.dotnet/tools
  - dotnet tool install --global dotnet-ef
