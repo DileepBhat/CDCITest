@@ -12,7 +12,7 @@ before_script:
  - psql -c "GRANT ALL PRIVILEGES ON DATABASE employee_db to service_account" -U postgres
 script:
  - dotnet build -c Release ./ArithematicChecks/ArithematicChecks.sln
- - dotnet-ef migrations add CreateInitial
+ - dotnet-ef migrations add CreateInitial --project ./ArithematicChecks/ArithematicAPIService.v1/ArithematicAPIService.v1.csproj
  - dotnet-ef database update --project ./ArithematicChecks/ArithematicAPIService.v1/ArithematicAPIService.v1.csproj
  - dotnet test -c Release --no-build ./ArithematicChecks/ArithematicChecks.sln /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
 after_script:
