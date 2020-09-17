@@ -8,11 +8,15 @@ addons:
   packages:
   - postgresql-12
   - postgresql-client-12
+ env:
+  global:
+    - PGVER=12
+    - PGPORT=5433
 before_script:
  - export PATH=$PATH:/home/travis/.dotnet/tools
  - dotnet tool install --global dotnet-ef
- - psql -c "CREATE USER service_account WITH PASSWORD 'service'" -U postgres
- - psql -c "CREATE DATABASE employee_db" -U postgres
+ - psql -c "CREATE USER service_account WITH PASSWORD 'service';" -U postgres
+ - psql -c "CREATE DATABASE employee_db;" -U postgres
  - psql -c "GRANT ALL PRIVILEGES ON DATABASE employee_db to service_account" -U postgres
 script:
  - dotnet build -c Release ./ArithematicChecks/ArithematicChecks.sln
