@@ -2,16 +2,8 @@ language: csharp
 sudo: required
 mono: none
 dotnet: 3.1
-addons:
- postgres: "12"
- apt:
-  packages:
-  - postgresql-12
-  - postgresql-client-12
- env:
-  global:
-    - PGVER=12
-    - PGPORT=5432
+services:
+- postgresql
 before_script:
  - export PATH=$PATH:/home/travis/.dotnet/tools
  - dotnet tool install --global dotnet-ef
@@ -20,6 +12,7 @@ before_script:
  - psql -c "GRANT ALL PRIVILEGES ON DATABASE employee_db to service_account" -U postgres
 script:
  - dotnet build -c Release ./ArithematicChecks/ArithematicChecks.sln
+ - dotnet-ef migrations add CreateInitial
  - dotnet-ef database update --project ./ArithematicChecks/ArithematicAPIService.v1/ArithematicAPIService.v1.csproj
  - dotnet test -c Release --no-build ./ArithematicChecks/ArithematicChecks.sln /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
 after_script:
